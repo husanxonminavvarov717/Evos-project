@@ -9,21 +9,15 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 
 public class MyBot extends TelegramLongPollingBot {
-
-    // O'zingning admin chat id va token/username ni shu yerga qo'y
-    private final String ADMIN_CHAT_ID = "7038296036"; // o'zgartir
+    private final String ADMIN_CHAT_ID = "7038296036";
     @Override
     public String getBotUsername() {
-        return "EvosByKhusannBot"; // o'zgartir
-    }
-
+        return "EvosByKhusannBot"; }
     @Override
     public String getBotToken() {
         return "***"; // o'zgartir
     }
-
     private final MyBotService server = new MyBotService();
-
     @Override
     public void onUpdateReceived(Update update) {
         try {
@@ -143,8 +137,6 @@ public class MyBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
-
-    // oddiy yordamchi: foydalanuvchiga matn yuborish
     private void sendText(long chatId, String text) {
         try {
             SendMessage m = new SendMessage();
@@ -155,8 +147,6 @@ public class MyBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
-
-    // admin ga matn yuborish
     private void sendTextToAdmin(String text) {
         try {
             SendMessage m = new SendMessage();
